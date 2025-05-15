@@ -43,14 +43,21 @@ export default function Home() {
     </Layout>
   )
 }
-export const getStaticProps = async () => {
-  const jsonProducts = await getProducts("/posts");
+// export const getStaticProps = async () => {
+//   try {
+//     const jsonProducts = await getProducts("/posts");
 
-  if(jsonProducts){
-    console.log('getStaticProps = ')
-    console.log(jsonProducts[0])
-    return {
-      props: {jsonProducts},
-    };
-  }
-}
+//     return {
+//       props: {
+//         jsonProducts: jsonProducts || [], // 即使失敗也給空陣列
+//       },
+//     };
+//   } catch (error) {
+//     console.error("Error in getStaticProps:", error);
+//     return {
+//       props: {
+//         jsonProducts: [],
+//       },
+//     };
+//   }
+// };
